@@ -1,4 +1,13 @@
 from abc import ABC, abstractmethod
+from unittest import TestCase
+
+class TestAbstract(TestCase):
+
+    def test_concrete(self):
+
+        co = ConcreteClass()
+        self.assertEqual("Not implemented!", co.method1())
+        self.assertEqual("Not implemented!", co.method2())
 
 
 class AbstractClass(ABC):
@@ -6,12 +15,12 @@ class AbstractClass(ABC):
     @abstractmethod
     def method1(self):
 
-        pass
+        raise NotImplementedError
 
     @abstractmethod
     def method2(self):
 
-        pass
+        raise NotImplementedError
 
 class ConcreteClass(AbstractClass):
 
@@ -22,4 +31,3 @@ class ConcreteClass(AbstractClass):
     def method2(self)->str:
 
         return "Not implemented!"
-
