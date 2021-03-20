@@ -16,7 +16,7 @@ Prototype. Creates a new object from an existing object.
 Singleton. Ensures only one instance of an object is created.
 
 
-# Structural Design Patterns
+## Structural Design Patterns
 Adapter. Allows for two incompatible classes to work together by wrapping an interface around one of the existing classes.
 
 Bridge. Decouples an abstraction so two classes can vary independently.
@@ -33,7 +33,7 @@ Proxy. Provides a placeholder interface to an underlying object to control acces
 
 
 
-# Behavior Design Patterns
+## Behavior Design Patterns
 Chain of Responsibility. Delegates commands to a chain of processing objects.
 
 Command. Creates objects which encapsulate actions and parameters.
