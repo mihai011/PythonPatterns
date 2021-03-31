@@ -6,10 +6,10 @@ class TestChain(TestCase):
 
     def test_chain(self):
 
-        coal_engine = Engine([EnergySource.coal])
-        gas_engine = Engine([EnergySource.gas])
+        coal_engine = FossilEngine([EnergySource.coal])
+        gas_engine = FossilEngine([EnergySource.gas])
 
-        electric_mana_engine = Engine([EnergySource.electricity, EnergySource.mana])
+        electric_mana_engine = FutureEngine([EnergySource.electricity, EnergySource.mana])
 
         #make chain
 
@@ -31,7 +31,7 @@ class EnergySource(Enum):
     mana = auto()
 
 
-class Engine():
+class Engine(ABC):
 
     def __init__(self, sources):
 
@@ -53,15 +53,21 @@ class Engine():
 
         raise NotImplementedError()
 
+    @abstractmethod
+    def power(self, source):
+
+
+        raise NotImplementedError
+
+
+class FossilEngine(Engine):
 
     def power(self, source):
 
         return "Macking power from source:{}".format(source)
 
-    
-        
+class FutureEngine(Engine):
 
+    def power(self, source):
 
-
-
-    
+        return "Macking power from source:{}".format(source)
