@@ -22,12 +22,8 @@ class Trivial():
 
     def __next__(self):
 
-        if self.val < 199:
+        if self.val < 199: 
             self.val += 1
             return self.val
         else:
             raise StopIteration
-            
-
-        
-
